@@ -2,9 +2,7 @@
 import "./../app.css";
 import Cart from "./Cart.astro";
 const { number1, number2 } = Astro.props;
-
 ---
-
 
 <section class="wrapper flex items-center justify-center w-full">
   <div class="ml-3 mr-3">
@@ -36,14 +34,15 @@ const { number1, number2 } = Astro.props;
       <div class="flex ml-4">
         <div class="min-w-[70%]">
           <div>
-            <h1 class="text-8xl">
+            <h1 class="text-7xl">
               <p class="">
-                <span class="">Find the</span>
+                <span class="text-gray-400">Find the</span>
                 <span>Most</span>
               </p>
               <span>Appropriate Residence</span>
               <p>
-                For You To Live In <span class="text-6xl font-bold">^</span>
+                For You <span class="text-gray-400">To Live In</span>
+                <span class="text-6xl font-bold">^</span>
               </p>
             </h1>
           </div>
@@ -52,10 +51,10 @@ const { number1, number2 } = Astro.props;
 
         <div class="flex items-center justify-center">
           <div>
-            <div class="flex justify-start">
+            <div class="flex justify-start gap-2">
               <span class="flex gap-2 justify-center items-center">
                 <img
-                  src=""
+                  src="image/profile.png"
                   alt="#img"
                   height="50"
                   width="50"
@@ -73,16 +72,16 @@ const { number1, number2 } = Astro.props;
         </div>
       </div>
       <!-- section-2 -->
-      <div class="flex justify-center mt-2 w-full">
-        <div class="flex justify-between items-center mt-3 max-w-[90%]">
+      <div class="flex mt-2 w-full justify-center">
+        <div class="flex justify-between items-center mt-3 max-w-[90%] gap-x-6">
           <div class="flex gap-2">
             <div>
               <img
-                src=""
+                src="image/location.png"
                 alt="#img"
                 height="50"
                 width="50"
-                class="rounded-full bg-slate-400"
+                class="rounded-full"
               />
             </div>
 
@@ -95,11 +94,11 @@ const { number1, number2 } = Astro.props;
           <div class="flex gap-2">
             <div>
               <img
-                src=""
+                src="image/building.png"
                 alt="#img"
                 height="50"
                 width="50"
-                class="rounded-full bg-slate-400"
+                class="rounded-full"
               />
             </div>
 
@@ -112,11 +111,11 @@ const { number1, number2 } = Astro.props;
           <div class="flex gap-2">
             <div>
               <img
-                src=""
+                src="image/wallet.png"
                 alt="#img"
                 height="50"
                 width="50"
-                class="rounded-full bg-slate-400"
+                class="rounded-full"
               />
             </div>
 
@@ -126,21 +125,8 @@ const { number1, number2 } = Astro.props;
             </div>
           </div>
 
-          <div class="flex gap-2">
-            <div>
-              <img
-                src=""
-                alt="#img"
-                height="50"
-                width="50"
-                class="rounded-full bg-slate-400"
-              />
-            </div>
-
-            <div>
-              <p>Best</p>
-              <p>Residence</p>
-            </div>
+          <div class="bg-green-300 rounded-full">
+            <button class="button">Search Property</button>
           </div>
         </div>
       </div>
@@ -343,7 +329,6 @@ const { number1, number2 } = Astro.props;
     <!-- section - 7 -->
 
     <div class="flex flex-col justify-center items-center w-full mb-4">
-
       <div class="m-1 p-1 flex flex-col justify-center items-center gap-3 mt-6">
         <p class="text-5xl">See More Clearly With</p>
         <p class="text-5xl">The <span>360°</span><span>Camera</span></p>
@@ -351,116 +336,123 @@ const { number1, number2 } = Astro.props;
 
       <!-- div for tabs -->
       <div class="flex justify-center">
-            <p class="text-5xl bg-red-500">Tabs are pendings.............</p><p>
-      </div>
+        <p class="text-5xl bg-red-500">Tabs are pendings.............</p><p></p>
 
-      <div class="flex justify-center items-center w-full">
-            <img src="image/home.jpg" alt="Map image" class="w-full h-[600px] object-cover" />
-      </div>
-
-      <div></div>
-
-    </div>
-
-    <!-- section - -- FOOTER .. -->
-
-    <section class="w-full">
-      <div class="bg-slate-800 bg-cover py-[5rem] px-12">
-        <h1 class="text-[#616363] text-4xl capitalize">
-          Interested to Build your home?
-        </h1>
-        <h2
-          class="text-white mt-4 text-4xl underline decoration-1 underline-offset-[8.5px]"
-        >
-          <a href="#">contact@Wika.agency</a>
-        </h2>
-
-        <!-- Horizontal Ruler -->
-        <div class="w-[92%] h-[2px] my-12 bg-[#616363]"></div>
-
-        <div class="flex flex-row justify-between">
-          <!-- Left Section -->
-          <div>
-            <h2 class="text-white text-3xl font-medium">Garment</h2>
-            <p class="mt-2 text-sm text-[#d9d9d9]">
-              Hats off to Garment! Their professionalism <br />
-              and commitment shine through
-            </p>
-
-            <div class="text-white mt-12 space-y-3 text-sm">
-              <p><!--Icon--> Surabaya, Indonesia</p>
-              <p><!--Icon--> Phone: (+62) 4444-4444</p>
-            </div>
-          </div>
-          <!--End of Left Section-->
-
-          <!-- Right Section -->
-          <div class="flex gap-16">
-            <!-- Sub Column-1 -->
-            <div>
-              <h2 class="text-white font-medium mb-3">ABOUT</h2>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Our Story</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Our People</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Contact Us</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2"><a href="#">FAQs</a></p>
-              <p class="text-[#d9d9d9] text-sm mb-2"><a href="#">Blog</a></p>
-            </div>
-
-            <!-- Sub Column-2 -->
-            <div>
-              <h2 class="text-white font-medium mb-3">SERVICES</h2>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">property</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Home Development</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Interior Design</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Custom Furniture</a>
-              </p>
-            </div>
-
-            <!-- Sub Column-3 -->
-            <div>
-              <h2 class="text-white font-medium mb-3">EVENTS</h2>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Property Art Gallery</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Full Calender</a>
-              </p>
-            </div>
-
-            <!-- Sub Column-4 -->
-            <div>
-              <h2 class="text-white font-medium mb-3">RESOURCES</h2>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Furniture</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2"><a href="#">Agents</a></p>
-              <p class="text-[#d9d9d9] text-sm mb-2"><a href="#">Career</a></p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Property Services</a>
-              </p>
-              <p class="text-[#d9d9d9] text-sm mb-2">
-                <a href="#">Latest News</a>
-              </p>
-            </div>
-          </div>
-          <!--End of Right Section-->
+        <div class="flex justify-center items-center w-full">
+          <img
+            src="image/home.jpg"
+            alt="Map image"
+            class="w-full h-[600px] object-cover"
+          />
         </div>
-      </div>
-    </section>
-  </div>
-</section>
 
-<!-- styling section -->
+        <div></div>
+      </div>
+
+      <!-- section - -- FOOTER .. -->
+
+      <section class="w-full">
+        <div class="bg-slate-800 bg-cover py-[5rem] px-12">
+          <h1 class="text-[#616363] text-4xl capitalize">
+            Interested to Build your home?
+          </h1>
+          <h2
+            class="text-white mt-4 text-4xl underline decoration-1 underline-offset-[8.5px]"
+          >
+            <a href="#">contact@Wika.agency</a>
+          </h2>
+
+          <!-- Horizontal Ruler -->
+          <div class="w-[92%] h-[2px] my-12 bg-[#616363]"></div>
+
+          <div class="flex flex-row justify-between">
+            <!-- Left Section -->
+            <div>
+              <h2 class="text-white text-3xl font-medium">Garment</h2>
+              <p class="mt-2 text-sm text-[#d9d9d9]">
+                Hats off to Garment! Their professionalism <br />
+                and commitment shine through
+              </p>
+
+              <div class="text-white mt-12 space-y-3 text-sm">
+                <p><!--Icon--> Surabaya, Indonesia</p>
+                <p><!--Icon--> Phone: (+62) 4444-4444</p>
+              </div>
+            </div>
+            <!--End of Left Section-->
+
+            <!-- Right Section -->
+            <div class="flex gap-16">
+              <!-- Sub Column-1 -->
+              <div>
+                <h2 class="text-white font-medium mb-3">ABOUT</h2>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Our Story</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Our People</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Contact Us</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2"><a href="#">FAQs</a></p>
+                <p class="text-[#d9d9d9] text-sm mb-2"><a href="#">Blog</a></p>
+              </div>
+
+              <!-- Sub Column-2 -->
+              <div>
+                <h2 class="text-white font-medium mb-3">SERVICES</h2>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">property</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Home Development</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Interior Design</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Custom Furniture</a>
+                </p>
+              </div>
+
+              <!-- Sub Column-3 -->
+              <div>
+                <h2 class="text-white font-medium mb-3">EVENTS</h2>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Property Art Gallery</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Full Calender</a>
+                </p>
+              </div>
+
+              <!-- Sub Column-4 -->
+              <div>
+                <h2 class="text-white font-medium mb-3">RESOURCES</h2>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Furniture</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Agents</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Career</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Property Services</a>
+                </p>
+                <p class="text-[#d9d9d9] text-sm mb-2">
+                  <a href="#">Latest News</a>
+                </p>
+              </div>
+            </div>
+            <!--End of Right Section-->
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- styling section -->
+</section>
