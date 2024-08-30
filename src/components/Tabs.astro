@@ -1,0 +1,59 @@
+---
+const tabsName = [
+  "Home",
+  "Interier Design",
+  "Kitchen",
+  "Swimming Pool",
+  "Bedroom",
+];
+
+const tabsContent = [
+  "image/home.jpg",
+  "image/home.jpg",
+  "image/home.jpg",
+  "image/home.jpg",
+  "image/home.jpg",
+];
+
+let isActive = 0;
+const setIsActive = () => {
+  isActive = tabsName.indexOf(tabsName[isActive]);
+};
+---
+
+<div class="flex flex-col justify-center items-center w-full mb-4 px-4">
+  <!-- Text Section -->
+  <div class="text-center mb-6 mt-5">
+    <p class="text-3xl md:text-4xl lg:text-6xl font-semibold">
+      See More Clearly With
+    </p>
+    <p class="text-3xl md:text-4xl lg:text-6xl font-semibold">
+      The <span class="text-green-400">360°</span>
+      <span>Camera</span>
+    </p>
+  </div>
+
+  <!-- Tabs Section (Placeholder for Future Tabs) -->
+  <div
+    class="flex lg:flex gap-5 mt-10 mb-5 p-1 lg:rounded-full md:rounded-full rounded-xl font-medium drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] bg-slate-300"
+  >
+    <div class="grid sm:grid-cols-3 lg:grid-cols-5 md:grid-cols-5 md:px-5">
+      {
+        tabsName.map((tab) => (
+          <button class="py-2 px-4 rounded-full hover:bg-slate-100 transition-colors">
+            {tab}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Image Section -->
+  <div class="relative w-full overflow-hidden">
+    <img
+      src="image/home.jpg"
+      alt="Map image"
+      class="w-full h-48 md:h-72 lg:h-[600px] object-cover"
+    />
+  </div>
+</div>

@@ -1,61 +1,95 @@
 ---
-interface Props {
-	title: string;
-	body: string;
-	href: string;
-}
+import Cart from "./Cart.astro";
 
-const { href, title, body } = Astro.props;
+const propertyData = [
+  {
+    name: "Luxury Villa",
+    price: "500",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "4.8",
+  },
+  {
+    name: "Cozy Apartment",
+    price: "150",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "4.5",
+  },
+  {
+    name: "Modern Loft",
+    price: "300",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "4.7",
+  },
+  {
+    name: "Beach House",
+    price: "700",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "4.9",
+  },
+  {
+    name: "Penthouse Suite",
+    price: "1000",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "5.0",
+  },
+  {
+    name: "Penthouse Suite",
+    price: "1000",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "5.0",
+  },
+  {
+    name: "Penthouse Suite",
+    price: "1000",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "5.0",
+  },
+  {
+    name: "Penthouse Suite",
+    price: "1000",
+    para: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+    rating: "5.0",
+  },
+];
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
-</style>
+<div class="px-4 sm:px-6 lg:px-8">
+  <!-- Section Header -->
+  <section class="mb-8 mt-4 flex">
+    <div class="w-full max-w-screen-xl">
+      <h1
+        class="lg:text-6xl mg:text-4xl mg:text-3xl text-2xl font-semibold text-center lg:flex lg:text-left capitalize mb-4 justify-start"
+      >
+        All the Best Residences <br /> From Us for You
+      </h1>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-center md:text-left">
+          We have developed a total of <!--{propertynumber}-->150+ properties
+        </p>
+        <button
+          class="mt-4 px-6 py-2 border-[1px] border-black rounded-full hover:curser-pointer hover:bg-black hover:text-white transition-colors"
+        >
+          Let's See Our Property <!--Icon using Astro-->
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Grid -->
+  <div class="w-full flex justify-center items-center">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 gap-y-6 max:w-[70%] mx-auto lg:gap-x-12 lg:ml-16"
+    >
+      {
+        propertyData.map((property) => (
+          <Cart
+            name={property.name}
+            price={property.price}
+            para={property.para}
+            rating={property.rating}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
