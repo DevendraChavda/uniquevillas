@@ -1,27 +1,28 @@
 ---
-import "./../app.css";
-import Cart from "./Cart.astro";
-import Property from "./Property.astro";
-import Location from "./Location.astro";
-import Card from "./Card.astro";
-import Footer from "./Footer.astro";
-import Tabs from "./Tabs.astro";
-import Swipper from "./Swipper.astro";
+import './../app.css';
+import Cart from './Cart.astro';
+import Property from './Property.astro';
+import Location from './Location.astro';
+import Card from './Card.astro';
+import Footer from './Footer.astro';
+import Tabs from './Tabs.astro';
+import Swipper from './Swipper.astro';
+import Searchbar from './searchbar.astro';
 const { number1, number2 } = Astro.props;
 
 const propertyData = [
-  {
-    name: "Luxury Villa",
-    surname: "500",
-    experience: "123 Luxury Lane, Beautiful City, CA 90001 USA",
-  },
+	{
+		name: 'Luxury Villa',
+		surname: '500',
+		experience: '123 Luxury Lane, Beautiful City, CA 90001 USA',
+	},
 ];
 ---
 
 <section class="wrapper flex items-center justify-center w-full">
-  <div class="ml-3 mr-3">
-    <!-- navbar -->
-    <nav class="flex justify-between">
+	<div class="ml-3 mr-3">
+		<!-- navbar -->
+		<!-- <nav class="flex justify-between">
       <h class="text-2xl font-bold p-1 hover:cursor-pointer"
         ><a href="/">Garment</a></h
       >
@@ -39,14 +40,15 @@ const propertyData = [
         <li><a href="#">Register</a></li>
         <li><a href="#">Cart</a></li>
       </ul>
-    </nav>
+    </nav> -->
 
-    <!-- hero content -->
+		<!-- hero content -->
 
-    <div class="mt-10 p-4">
-      <!-- section-1 -->
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
-        <div class="flex-1 text-center md:text-left md:ml-5 md:pl-5">
+		<div class="mt-10 p-4">
+			<!-- section-1 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+        <!-- Main Content Section -->
+        <div class="flex flex-col items-center md:items-start justify-center text-center md:text-left">
           <h1 class="text-3xl md:text-7xl">
             <p>
               <span class="text-gray-400">Find the</span>
@@ -55,132 +57,73 @@ const propertyData = [
             <p>Appropriate Residence</p>
             <p>
               For You <span class="text-gray-400">To Live In</span>
-              <span class="text-4xl md:text-6xl">^</span>
             </p>
           </h1>
-          <button
-            class="mt-4 px-6 py-2 border-[1px] border-black rounded-full hover:curser-pointer hover:bg-black hover:text-white transition-colors"
-            >See Properties</button
-          >
         </div>
-
+      
         <!-- Testimonial Section -->
-        <div
-          class="flex-shrink-1 flex flex-col items-center md:items-start gap-4 p-4 bg-gray-100 rounded-lg shadow-lg lg:w-[40vw] md:w-[60vw] w-[350px]"
+        <div class="flex items-center justify-center">
+          <div class="flex flex-col items-center md:items-start max-w-md">
+            <div class="flex items-center gap-2 mb-4">
+              <img
+                src="image/profile.png"
+                alt="Testimonial Profile"
+                height="50"
+                width="50"
+                class="rounded-full bg-slate-400"
+              />
+              <span class="font-semibold">TOP TESTIMONIAL</span>
+            </div>
+            <p class="font-medium text-center md:text-left mb-4">
+              Incredible experience with a garment! Their expertise and dedication made...
+            </p>
+            <p class="flex items-center gap-2">
+              <span class=""><img src="image/rating.svg" height="20" width="20" /></span>
+              4.8
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <div class="flex-1 text-center md:text-left md:ml-5 md:pl-5">
+        <button
+          class="mt-4 px-6 py-2 border-[1px] border-black rounded-full hover:curser-pointer hover:bg-black hover:text-white transition-colors"
+          >See Properties</button
         >
-          <div class="flex items-center gap-2">
-            <img
-              src="image/profile.png"
-              alt="Testimonial Profile"
-              height="50"
-              width="50"
-              class="rounded-full bg-slate-400"
-            />
-            <span class="font-semibold">TOP TESTIMONIAL</span>
-          </div>
-          <p
-            class="font-medium text-center md:text-left md:max-w-[60%]: lg:max-w-[60%] sm:max-w-[70%]"
-          >
-            Incredible experience with a garment! Their expertise and dedication
-            made...
-          </p>
-          <p class="flex items-center gap-2">
-            <span class=""
-              ><img src="image/rating.svg" height="20" width="20" /></span
-            >
-            4.8
-          </p>
-        </div>
       </div>
 
-      <!-- section-2 -->
-      <div class="mt-8 flex flex-col sm:flex-row justify-center items-center">
-        <!-- Feature Cards -->
-        <div class="feature-section">
-          <div class="flex items-center justify-between min-w-[10rem]">
-            <div class="flex items-center gap-2">
-              <div class="cart-image">
-                <img
-                  src="image/location.png"
-                  alt="Location Icon"
-                  height="20"
-                  width="20"
-                  class="rounded-full"
-                />
-              </div>
-              <div>
-                <p class="font-semibold">Best</p>
-                <p class="text-gray-400">Search Location</p>
-              </div>
-            </div>
+			<!-- section-2 -->
+			<div class="mt-8 flex flex-col sm:flex-row justify-center items-center">
+				<!-- Feature Cards -->
+				<div class="feature-section">
+					<Searchbar title="Location" imageLocation="image/location.png" placeHolder="Search location" />
+					<div class="min-w-0.5 h-12 mt-1 bg-slate-400 hidden lg:block ml-4"></div>
+					<Searchbar title="Select Type" imageLocation="image/build.png" placeHolder="Search location" />
+					<div class="min-w-0.5 h-12 mt-1 bg-slate-400 hidden lg:block ml-4"></div>
+					<Searchbar title="Budget" imageLocation="image/wall.png" placeHolder="Determine your budget" />
+					<div class="flex justify-center items-center lg:ml-6 mb-2">
+						<button class="feature-button"> Search Property </button>
+					</div>
+				</div>
+			</div>
+		</div>
 
-            <div class="w-[1px] h-[40px] bg-slate-400 hidden lg:block ml-4">
-            </div>
-          </div>
+		<Property number1={150} number2={87} />
 
-          <div class="flex items-center justify-between min-w-[10rem]">
-            <div class="flex items-center gap-2">
-              <div class="cart-image">
-                <img
-                  src="image/build.png"
-                  alt="Location Icon"
-                  height="20"
-                  width="20"
-                  class="rounded-full"
-                />
-              </div>
-              <div>
-                <p class="font-semibold">Select Type</p>
-                <p class="text-gray-400">Search Location</p>
-              </div>
-            </div>
+		<Location />
 
-            <div class="w-[1px] h-[40px] bg-slate-400 hidden lg:block ml-4">
-            </div>
-          </div>
+		<Card />
 
-          <div class="flex items-center justify-between min-w-[10rem]">
-            <div class="flex items-center gap-2">
-              <div class="cart-image">
-                <img
-                  src="image/wall.png"
-                  alt="Location Icon"
-                  height="20"
-                  width="20"
-                  class="rounded-full"
-                />
-              </div>
-              <div>
-                <p class="font-semibold">Budget</p>
-                <p class="text-gray-400">Determine Your Budget</p>
-              </div>
-            </div>
+		<Tabs />
 
-            <div class="w-[1px] h-[40px] bg-slate-400 hidden lg:block ml-4">
-            </div>
-          </div>
-
-          <div class="flex justify-center items-center lg:ml-6 mb-2">
-            <button class="feature-button"> Search Property </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <Property number1={150} number2={87} />
-
-    <Location />
-
-    <Card />
-
-    <Tabs />
-
-    <!-- <Swipper
+		<!-- <Swipper
       name={propertyData[0].name}
       surname={propertyData[0].surname}
       experience={propertyData[0].experience}
     /> -->
 
-    <Footer />
-  </div>
+		<Footer />
+	</div>
 </section>

@@ -1,0 +1,13 @@
+---
+const { placeHolder, title, imageLocation } = Astro.props;
+---
+
+<div class="flex items-center gap-2">
+	<div class="cart-image">
+		<img src={imageLocation} alt="Location Icon" height="20" width="20" class="rounded-full" />
+	</div>
+	<div>
+		<p class="font-semibold">{title}</p>
+		<p class="text-gray-400">{placeHolder}</p>
+	</div>
+</div>
