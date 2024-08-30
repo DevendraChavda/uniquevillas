@@ -39,7 +39,7 @@ const { number1, number2 } = Astro.props;
       <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
         <!-- Text and Button Section -->
         <div class="flex-1 text-center md:text-left">
-          <h1 class="text-4xl md:text-7xl">
+          <h1 class="text-3xl md:text-7xl">
             <p>
               <span class="text-gray-400">Find the</span>
               <span>Most</span>
@@ -51,7 +51,7 @@ const { number1, number2 } = Astro.props;
             </p>
           </h1>
           <button
-            class="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+            class="mt-4 px-6 py-2 border-[1px] border-black rounded-full hover:curser-pointer hover:bg-black hover:text-white transition-colors"
             >See Properties</button
           >
         </div>
@@ -70,7 +70,7 @@ const { number1, number2 } = Astro.props;
             />
             <span class="font-semibold">TOP TESTIMONIAL</span>
           </div>
-          <p class="font-medium text-center md:text-left max-w-[80%]">
+          <p class="font-medium text-center md:text-left max-w-[60%]">
             Incredible experience with a garment! Their expertise and dedication
             made...
           </p>
@@ -82,55 +82,59 @@ const { number1, number2 } = Astro.props;
         class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-6"
       >
         <!-- Feature Cards -->
-        <div class="flex flex-wrap justify-center gap-6">
-          <div class="flex items-center gap-2">
-            <img
-              src="image/location.png"
-              alt="Location Icon"
-              height="50"
-              width="50"
-              class="rounded-full"
-            />
+        <div class="feature-section">
+          <div class="flex items-center gap-4">
+            <div class="cart-image">
+              <img
+                src="image/location.png"
+                alt="Location Icon"
+                height="50"
+                width="50"
+                class="rounded-full"
+              />
+            </div>
             <div>
               <p class="font-semibold">Best</p>
               <p>Location</p>
             </div>
           </div>
 
-          <div class="flex items-center gap-2">
-            <img
-              src="image/building.png"
-              alt="Building Icon"
-              height="50"
-              width="50"
-              class="rounded-full"
-            />
+          <div class="flex items-center gap-4">
+            <div class="cart-image">
+              <img
+                src="image/building.png"
+                alt="Building Icon"
+                height="50"
+                width="50"
+                class="rounded-full"
+              />
+            </div>
             <div>
               <p class="font-semibold">Best</p>
               <p>Building</p>
             </div>
           </div>
 
-          <div class="flex items-center gap-2">
-            <img
-              src="image/wallet.png"
-              alt="Wallet Icon"
-              height="50"
-              width="50"
-              class="rounded-full"
-            />
+          <div class="flex items-center gap-4">
+            <div class="cart-image">
+              <img
+                src="image/wallet.png"
+                alt="Wallet Icon"
+                height="50"
+                width="50"
+                class="rounded-full"
+              />
+            </div>
             <div>
               <p class="font-semibold">Best</p>
               <p>Price</p>
             </div>
           </div>
-        </div>
 
-        <button
-          class="mt-4 px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
-        >
-          Search Property
-        </button>
+          <div class="flex justify-center items-center lg:ml-6">
+            <button class="feature-button"> Search Property </button>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -1,67 +1,75 @@
 ---
 import Cart from "./Cart.astro";
+
+const propertyData = [
+  {
+    name: "Luxury Villa",
+    price: "500",
+    para: "Spacious luxury villa with a stunning view.",
+    rating: "4.8",
+  },
+  {
+    name: "Cozy Apartment",
+    price: "150",
+    para: "Charming apartment in a quiet neighborhood.",
+    rating: "4.5",
+  },
+  {
+    name: "Modern Loft",
+    price: "300",
+    para: "Contemporary loft with open-plan living space.",
+    rating: "4.7",
+  },
+  {
+    name: "Beach House",
+    price: "700",
+    para: "Elegant beach house with direct ocean access.",
+    rating: "4.9",
+  },
+  {
+    name: "Penthouse Suite",
+    price: "1000",
+    para: "Luxurious penthouse with panoramic city views.",
+    rating: "5.0",
+  },
+];
 ---
 
-<div>
-  <section class="w-full mb-8 mt-4">
-    <div class="w-[90%]">
-      <div class="w-full mt-12">
-        <h1 class="capitalize text-4xl">
-          all the best residences <br /> from us for you
-        </h1>
-        <div class="flex justify-between mt-3">
-          <p>
-            We have developed a total of <!--{propertynumber}-->150+ properties
-          </p>
-          <button
-            class="border-[1.5px] border-black p-2 px-4 -mt-2 rounded-full"
-            >Let's see our property - <!--Icon using Astro-->
-          </button>
-        </div>
+<div class="px-4 sm:px-6 lg:px-8">
+  <!-- Section Header -->
+  <section class="mb-8 mt-4 flex">
+    <div class="w-full max-w-screen-xl">
+      <h1 class="text-4xl font-semibold text-center capitalize mb-4">
+        All the Best Residences <br /> From Us for You
+      </h1>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-center md:text-left">
+          We have developed a total of <!--{propertynumber}-->150+ properties
+        </p>
+        <button
+          class="border border-black py-2 px-4 rounded-full text-black font-medium hover:bg-gray-200 transition-colors"
+        >
+          Let's See Our Property <!--Icon using Astro-->
+        </button>
       </div>
     </div>
   </section>
 
-  <div class="w-[100%] items-center justify-center">
+  <!-- Property Grid -->
+  <div class="w-full max-w-screen-xl mx-auto">
     <div
-      class="w-[90%] mx-auto grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-1"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
     >
-      <Cart
-        name="Villa"
-        price="30"
-        para="We have developed a total of 150+ properties"
-        ratting="5.0"
-      />
-      <Cart
-        name="Villa"
-        price="30"
-        para="We have developed a total of 150+ properties"
-        ratting="5.0"
-      />
-      <Cart
-        name="Villa"
-        price="30"
-        para="We have developed a total of 150+ properties"
-        ratting="5.0"
-      />
-      <Cart
-        name="Villa"
-        price="30"
-        para="We have developed a total of 150+ properties"
-        ratting="5.0"
-      />
-      <Cart
-        name="Villa"
-        price="30"
-        para="We have developed a total of 150+ properties"
-        ratting="5.0"
-      />
-      <Cart
-        name="Villa"
-        price="30"
-        para="We have developed a total of 150+ properties"
-        ratting="5.0"
-      />
+      {
+        propertyData.map((property) => (
+          <Cart
+            name={property.name}
+            price={property.price}
+            para={property.para}
+            rating={property.rating}
+          />
+        ))
+      }
     </div>
   </div>
 </div>

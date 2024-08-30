@@ -46,3 +46,14 @@
 .cart {
     @apply bg-slate-400 h-[200px] rounded-xl
 }
+.cart-image {
+    @apply flex items-center justify-center p-2 rounded-full border-[1px] border-slate-300
+}
+
+.feature-section {
+    @apply flex flex-col lg:flex-row md:flex-row justify-center gap-x-16 gap-3 lg:border-[1px] md:border-[1px] border-slate-300 pl-12 pr-12 py-2 rounded-full
+}
+
+.feature-button {
+    @apply mt-4 px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600
+}
