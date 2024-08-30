@@ -1,24 +1,49 @@
 ---
 const tabsName = [
-  "Home",
-  "Interier Design",
-  "Kitchen",
-  "Swimming Pool",
-  "Bedroom",
+  {
+    id: 1,
+    tab: "Home",
+  },
+  {
+    id: 2,
+    tab: "Interior Design",
+  },
+  {
+    id: 3,
+    tab: "Kitchen",
+  },
+  {
+    id: 4,
+    tab: "Swimming Pool",
+  },
+  {
+    id: 5,
+    tab: "Bedroom",
+  },
 ];
 
 const tabsContent = [
-  "image/home.jpg",
-  "image/home.jpg",
-  "image/home.jpg",
-  "image/home.jpg",
-  "image/home.jpg",
+  {
+    id: 1,
+    tab: "image/home.jpg",
+  },
+  {
+    id: 2,
+    tab: "image/Interior.jpg",
+  },
+  {
+    id: 3,
+    tab: "image/Kitchen.jpg",
+  },
+  {
+    id: 4,
+    tab: "image/Swimming.jpg",
+  },
+  {
+    id: 5,
+    tab: "image/home.jpg",
+  },
 ];
-
-let isActive = 0;
-const setIsActive = () => {
-  isActive = tabsName.indexOf(tabsName[isActive]);
-};
 ---
 
 <div class="flex flex-col justify-center items-center w-full mb-4 px-4">
@@ -39,21 +64,55 @@ const setIsActive = () => {
   >
     <div class="grid sm:grid-cols-3 lg:grid-cols-5 md:grid-cols-5 md:px-5">
       {
-        tabsName.map((tab) => (
-          <button class="py-2 px-4 rounded-full hover:bg-slate-100 transition-colors">
-            {tab}
+        tabsName.map((tab, id) => (
+          <button class="tabs py-2 px-4 rounded-full hover:bg-slate-100 transition-colors">
+            {tab.tab}
           </button>
         ))
       }
     </div>
   </div>
 
-  <!-- Image Section -->
-  <div class="relative w-full overflow-hidden">
-    <img
-      src="image/home.jpg"
-      alt="Map image"
-      class="w-full h-48 md:h-72 lg:h-[600px] object-cover"
-    />
-  </div>
+  <!-- Image -- render image according to tabs-->
+  {
+    tabsContent.map((tab) => (
+      <div class="w-full flex justify-center items-center">
+        {tab.id === 2 ? (
+          <img
+            src={tab.tab}
+            alt="home"
+            class="w-full max-w-6xl h-auto object-cover rounded-xl"
+          />
+        ) : (
+          <div />
+        )}
+      </div>
+    ))
+  }
 </div>
+
+<!-- js script -->
+<script>
+  const tabs = document.querySelectorAll(".tabs");
+  // remove active class from all buttons and add active class on current button
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+      });
+      tab.classList.add("active");
+    });
+  });
+
+  // make a one variable that can show the number which tab is active
+</script>
+
+<style>
+  .active {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+</style>
