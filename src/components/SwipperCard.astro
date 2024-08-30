@@ -1,0 +1,41 @@
+---
+import "./../app.css";
+const { profile, name, surname, experience } = Astro.props;
+---
+
+<!-- cart section -->
+<div class="flex flex-col items-start">
+  <div>
+    <div class="flex items-center gap-2">
+      <div class="cart-image">
+        <img
+          src="image/profile.png"
+          alt="Location Icon"
+          height="25"
+          width="25"
+          class="rounded-full"
+        />
+      </div>
+      <div>
+        <p class="font-semibold">{name}</p>
+        <p class="text-gray-400">{surname}</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    {experience}
+  </div>
+  <div class="h-[1px] w-[80%] bg-slate-500"></div>
+
+  <div class="flex justify-between items-center">
+    <div class="flex flex-col gap-1">
+      <p>Let's See</p>
+      <p>Home Gallery</p>
+    </div>
+
+    <div>
+      <img src="image/home.png" height="40" width="40" />
+    </div>
+  </div>
+</div>

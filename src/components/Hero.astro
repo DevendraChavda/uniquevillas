@@ -8,6 +8,14 @@ import Footer from "./Footer.astro";
 import Tabs from "./Tabs.astro";
 import Swipper from "./Swipper.astro";
 const { number1, number2 } = Astro.props;
+
+const propertyData = [
+  {
+    name: "Luxury Villa",
+    surname: "500",
+    experience: "123 Luxury Lane, Beautiful City, CA 90001 USA",
+  },
+];
 ---
 
 <section class="wrapper flex items-center justify-center w-full">
@@ -167,7 +175,12 @@ const { number1, number2 } = Astro.props;
 
     <Tabs />
 
-    <Swipper />
+    <!-- <Swipper
+      name={propertyData[0].name}
+      surname={propertyData[0].surname}
+      experience={propertyData[0].experience}
+    /> -->
+
     <Footer />
   </div>
 </section>
