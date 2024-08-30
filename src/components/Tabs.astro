@@ -3,22 +3,27 @@ const tabsName = [
   {
     id: 1,
     tab: "Home",
+    url: "image/home.jpg",
   },
   {
     id: 2,
     tab: "Interior Design",
+    url: "image/Interior.jpg",
   },
   {
     id: 3,
     tab: "Kitchen",
+    url: "image/Kitchen.jpg",
   },
   {
     id: 4,
     tab: "Swimming Pool",
+    url: "image/Swimming.jpg",
   },
   {
     id: 5,
     tab: "Bedroom",
+    url: "image/home.jpg",
   },
 ];
 
@@ -44,6 +49,8 @@ const tabsContent = [
     tab: "image/home.jpg",
   },
 ];
+
+let num = 0;
 ---
 
 <div class="flex flex-col justify-center items-center w-full mb-4 px-4">
@@ -74,21 +81,11 @@ const tabsContent = [
   </div>
 
   <!-- Image -- render image according to tabs-->
-  {
-    tabsContent.map((tab) => (
-      <div class="w-full flex justify-center items-center">
-        {tab.id === 2 ? (
-          <img
-            src={tab.tab}
-            alt="home"
-            class="w-full max-w-6xl h-auto object-cover rounded-xl"
-          />
-        ) : (
-          <div />
-        )}
-      </div>
-    ))
-  }
+  <img
+    src={tabsContent[num].tab}
+    alt="image"
+    class="w-full h-full object-cover object-center activeImg"
+  />
 </div>
 
 <!-- js script -->
@@ -102,6 +99,18 @@ const tabsContent = [
         tab.classList.remove("active");
       });
       tab.classList.add("active");
+
+      // make a one variable that can show the number which tab is active
+    });
+  });
+
+  tabs.forEach((tab, id) => {
+    tab.addEventListener("click", () => {
+      if (tab.classList.contains("active")) {
+        console.log("Active tab is :", id + 1);
+        let activeTabNo = id;
+        console.log("Active tab is :", activeTabNo);
+      }
     });
   });
 
@@ -114,5 +123,9 @@ const tabsContent = [
     color: black;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .activeImg {
+    display: block;
   }
 </style>
