@@ -14,6 +14,11 @@ const tabsContent = [
   "image/home.jpg",
   "image/home.jpg",
 ];
+
+let isActive = 0;
+const setIsActive = () => {
+  isActive = tabsName.indexOf(tabsName[isActive]);
+};
 ---
 
 <div class="flex flex-col justify-center items-center w-full mb-4 px-4">
